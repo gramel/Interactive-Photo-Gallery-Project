@@ -1,0 +1,189 @@
+/* Tested on Chrome Version 53.0.2785.116 (64-bit) and Firefox 47.0 */
+
+/* Table of Contents
+––––––––––––––––––––––––––––––––––––––––––––––––––
+- Base Element Styles
+- Base Layout Styles
+- Header
+- Gallery
+- Lightbox
+- Media Queries
+*/
+
+/* Base Element Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+* {
+  box-sizing: border-box;
+  border: 0;
+  text-decoration: none; }
+
+h1, h2, h3, p {
+  padding: 0;
+  margin: 0; }
+
+
+
+/* Base Layout Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.container {
+  max-width: 320px;
+  margin: 0 auto; 
+  background: #fff; }
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both; }
+
+
+
+/* Header
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+header {
+  position: fixed;
+  width: 100%;
+  text-align: center; }
+
+input[type=search] {
+  margin: 24px 0;
+  padding: 10px;
+  width: 300px;
+  height: 24px;
+  border-radius: 3px;
+  border: 2px solid #d3d3d3; }
+
+
+
+/* Gallery
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.gallery {
+  padding-top: 96px; }
+
+#thumbnails {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; }
+
+#thumbnails img, #thumbnails video {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 60px; }
+
+
+
+/* Lightbox
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 100%;
+  height: 150%;
+  background: rgba(0,0,0,0.7); 
+  text-align: center; }
+
+#overlay img, #overlay video {
+  width: 230px;
+  margin-top: 96px; }
+
+#overlay p {
+  max-width: 230px;
+  margin: 24px auto;
+  color: #fff; 
+  text-align: left; }
+
+#leftArrow {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  margin: 10px;
+  background: url('../img/bg-slider-left-arrow.png') no-repeat;
+  background-size: cover; 
+  vertical-align: 49.375px; }
+
+#rightArrow {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  margin: 10px;
+  background: url('../img/bg-slider-right-arrow.png') no-repeat;
+  background-size: cover;
+  vertical-align: 49.375px; }
+
+#closeLightbox {
+  position: relative;
+  top: -92.375px;
+  right: 42.5px;
+  width: 25px;
+  height: 25px;
+  margin: 20px;
+  background: url('../img/lightbox-close.png') no-repeat;
+  background-size: cover; }
+
+video {
+  width: 230px;
+  height: 143.75px; }
+
+
+/* Media Queries
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/* --- Tablet --- */
+
+@media (min-width: 720px) { 
+
+  /* --- Base Layout Styles --- */
+
+  .container { max-width: 720px; }
+
+  /* --- Header ---*/
+
+  input[type=search] { width: 460px; }
+
+  /* --- Gallery ---*/
+  
+  #thumbnails { 
+    justify-content: space-around;
+    align-items: flex-start; }
+
+  /* --- Lightbox --- */
+  
+  #overlay img, #overlay video { width: 630px; }
+
+  #overlay p { max-width: 600px; }
+
+  #leftArrow, #rightArrow { vertical-align: 202.5px; }
+
+  #closeLightbox { top: -189.5px; }
+
+  video {
+  width: 630px;
+  height: 393.75px; }
+
+}/* --- end tablet --- */
+
+/* --- Desktop --- */
+
+@media (min-width: 1024px) { 
+
+  /* --- Base Layout Styles --- */
+
+  .container { max-width: 980px; }
+
+  /* --- Lightbox --- */
+  
+  #overlay img, #overlay video { 
+    width: 720px; 
+    height: 450px;}
+
+  #closeLightbox { top: -245.5px; }
+
+}/* --- end desktop --- */
+
+
